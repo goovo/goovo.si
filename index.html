@@ -25,6 +25,9 @@ color:var(--ink);text-decoration:none;letter-spacing:.02em}
 .site-nav a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
 text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
 .site-nav a:hover{color:var(--rust)}
+.lang-switch{font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);
+border-radius:2px;padding:4px 8px}
 .hero{padding:104px 0 96px}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;
 color:var(--rust);text-transform:uppercase;margin-bottom:28px}
@@ -85,16 +88,57 @@ letter-spacing:.08em;color:var(--ink-soft)}
 </style>
 </head>
 <body>
-  <header class="site-head"><div class="wrap head-inner"><a class="wordmark" href="#top">Goovo Studio</a><nav class="site-nav"><a href="#process">From ideas to action</a><a href="#about">About</a><a href="#signup">Stay in the loop</a></nav></div></header>
+  <header class="site-head"><div class="wrap head-inner"><a class="wordmark" href="#top">Goovo Studio</a><nav class="site-nav"><a href="#process" data-i18n="process">From ideas to action</a><a href="#about" data-i18n="about">About</a><a href="#signup" data-i18n="signup">Stay in the loop</a></nav><select id="lang-switch" class="lang-switch" aria-label="Language"><option value="en" selected>English</option><option value="zh-CN">简体中文</option><option value="zh-TW">繁體中文</option><option value="es">Español</option><option value="vi">Tiếng Việt</option><option value="ja">日本語</option></select></div></header>
   <main id="top">
-    <section class="hero"><div class="wrap"><p class="eyebrow">GOOVO.ME</p><h1>Run your business with agents that keep moving</h1><p class="lede">Give your team an orchestration layer that plans work, delegates it to specialists, and reports back every day.</p><div class="hero-actions"><a class="btn" href="#signup">Join the early access list</a><a class="browse" href="#about">Browse ↓</a></div></div></section>
-<section id="process" class="band"><div class="wrap"><p class="section-label">01 / From ideas to action</p><div class="steps"><div class="step"><span class="step-num">01</span><h3>Define the real problem</h3><p>Start from the actual context and name what needs solving.</p></div><div class="step"><span class="step-num">02</span><h3>Organize what matters</h3><p>Turn scattered material into a clear structure and story.</p></div><div class="step"><span class="step-num">03</span><h3>Review the results</h3><p>Let real feedback verify the work, then refine and iterate.</p></div></div></div></section>
-<section id="about" class="band"><div class="wrap"><p class="section-label">02 / About</p><div class="about"><div><p class="about-text">Give your team an orchestration layer that plans work, delegates it to specialists, and reports back every day.</p><p class="about-caption">goovo.me</p></div><span class="about-glyph" aria-hidden="true">G</span></div></div></section>
-<section id="signup" class="band"><div class="wrap"><p class="section-label">03 / Stay in the loop</p><h2 class="signup-heading">Leave your email for updates</h2><form method="post" action="/signup">
+    <section class="hero"><div class="wrap"><p class="eyebrow">GOOVO.ME</p><h1>Run your business with agents that keep moving</h1><p class="lede">Give your team an orchestration layer that plans work, delegates it to specialists, and reports back every day.</p><div class="hero-actions"><a class="btn" href="#signup">Join the early access list</a><a class="browse" href="#about" data-i18n="browse">Browse ↓</a></div></div></section>
+<section id="process" class="band"><div class="wrap"><p class="section-label">01 / <span data-i18n="process">From ideas to action</span></p><div class="steps"><div class="step"><span class="step-num">01</span><h3 data-i18n="step1_title">Define the real problem</h3><p data-i18n="step1_body">Start from the actual context and name what needs solving.</p></div><div class="step"><span class="step-num">02</span><h3 data-i18n="step2_title">Organize what matters</h3><p data-i18n="step2_body">Turn scattered material into a clear structure and story.</p></div><div class="step"><span class="step-num">03</span><h3 data-i18n="step3_title">Review the results</h3><p data-i18n="step3_body">Let real feedback verify the work, then refine and iterate.</p></div></div></div></section>
+<section id="about" class="band"><div class="wrap"><p class="section-label">02 / <span data-i18n="about">About</span></p><div class="about"><div><p class="about-text">Give your team an orchestration layer that plans work, delegates it to specialists, and reports back every day.</p><p class="about-caption">goovo.me</p></div><span class="about-glyph" aria-hidden="true">G</span></div></div></section>
+<section id="signup" class="band"><div class="wrap"><p class="section-label">03 / <span data-i18n="signup">Stay in the loop</span></p><h2 class="signup-heading" data-i18n="signup_heading">Leave your email for updates</h2><form method="post" action="/signup">
+      <input type="hidden" name="lang" id="lang-field" value="en">
       <input type="email" name="email" placeholder="you@example.com" required>
       <button type="submit">Join the early access list</button>
-    </form><p class="signup-note">Only meaningful updates. Unsubscribe anytime.</p></div></section>
+    </form><p class="signup-note" data-i18n="signup_note">Only meaningful updates. Unsubscribe anytime.</p></div></section>
   </main>
   <footer class="site-foot"><div class="wrap foot-inner"><span>© 2026 Goovo Studio</span><span class="foot-domain">goovo.me</span></div></footer>
+<script type="module">
+const CONFIG = {"strings": {"en": {"topics": "Topics", "process": "From ideas to action", "about": "About", "signup": "Stay in the loop", "browse": "Browse \u2193", "signup_heading": "Leave your email for updates", "signup_note": "Only meaningful updates. Unsubscribe anytime.", "step1_title": "Define the real problem", "step1_body": "Start from the actual context and name what needs solving.", "step2_title": "Organize what matters", "step2_body": "Turn scattered material into a clear structure and story.", "step3_title": "Review the results", "step3_body": "Let real feedback verify the work, then refine and iterate."}, "zh-CN": {"topics": "\u5173\u6ce8\u9886\u57df", "process": "\u628a\u60f3\u6cd5\u53d8\u6210\u884c\u52a8", "about": "\u5173\u4e8e", "signup": "\u8ba2\u9605\u66f4\u65b0", "browse": "\u6d4f\u89c8\u5185\u5bb9 \u2193", "signup_heading": "\u7559\u4e0b\u90ae\u7bb1\uff0c\u83b7\u53d6\u66f4\u65b0", "signup_note": "\u53ea\u53d1\u9001\u91cd\u8981\u66f4\u65b0\uff0c\u53ef\u968f\u65f6\u9000\u8ba2\u3002", "step1_title": "\u754c\u5b9a\u771f\u5b9e\u95ee\u9898", "step1_body": "\u4ece\u5b9e\u9645\u573a\u666f\u51fa\u53d1\uff0c\u5148\u5f04\u6e05\u695a\u771f\u6b63\u8981\u89e3\u51b3\u7684\u662f\u4ec0\u4e48\u3002", "step2_title": "\u7ec4\u7ec7\u6709\u6548\u4fe1\u606f", "step2_body": "\u628a\u5206\u6563\u7684\u7d20\u6750\u6574\u7406\u6210\u6e05\u6670\u7684\u7ed3\u6784\u4e0e\u8868\u8fbe\u3002", "step3_title": "\u590d\u76d8\u5b9e\u8df5\u7ed3\u679c", "step3_body": "\u7528\u771f\u5b9e\u53cd\u9988\u68c0\u9a8c\u6210\u679c\uff0c\u6301\u7eed\u4fee\u6b63\u4e0e\u8fed\u4ee3\u3002"}, "zh-TW": {"topics": "\u95dc\u6ce8\u9818\u57df", "process": "\u628a\u60f3\u6cd5\u8b8a\u6210\u884c\u52d5", "about": "\u95dc\u65bc", "signup": "\u8a02\u95b1\u66f4\u65b0", "browse": "\u700f\u89bd\u5167\u5bb9 \u2193", "signup_heading": "\u7559\u4e0b\u96fb\u5b50\u90f5\u4ef6\uff0c\u7372\u53d6\u66f4\u65b0", "signup_note": "\u53ea\u767c\u9001\u91cd\u8981\u66f4\u65b0\uff0c\u53ef\u96a8\u6642\u53d6\u6d88\u8a02\u95b1\u3002", "step1_title": "\u754c\u5b9a\u771f\u5be6\u554f\u984c", "step1_body": "\u5f9e\u5be6\u969b\u5834\u666f\u51fa\u767c\uff0c\u5148\u5f04\u6e05\u695a\u771f\u6b63\u8981\u89e3\u6c7a\u7684\u662f\u4ec0\u9ebc\u3002", "step2_title": "\u7d44\u7e54\u6709\u6548\u8cc7\u8a0a", "step2_body": "\u628a\u5206\u6563\u7684\u7d20\u6750\u6574\u7406\u6210\u6e05\u6670\u7684\u7d50\u69cb\u8207\u8868\u9054\u3002", "step3_title": "\u8986\u76e4\u5be6\u8e10\u7d50\u679c", "step3_body": "\u7528\u771f\u5be6\u56de\u994b\u6aa2\u9a57\u6210\u679c\uff0c\u6301\u7e8c\u4fee\u6b63\u8207\u8fed\u4ee3\u3002"}, "es": {"topics": "Temas", "process": "De la idea a la acci\u00f3n", "about": "Acerca de", "signup": "Mantente al d\u00eda", "browse": "Explorar \u2193", "signup_heading": "Deja tu correo para recibir novedades", "signup_note": "Solo novedades importantes. Cancela cuando quieras.", "step1_title": "Define el problema real", "step1_body": "Parte del contexto real y define qu\u00e9 hay que resolver.", "step2_title": "Organiza lo importante", "step2_body": "Convierte material disperso en una estructura y un relato claros.", "step3_title": "Revisa los resultados", "step3_body": "Deja que la retroalimentaci\u00f3n real verifique el trabajo y mejora."}, "vi": {"topics": "Ch\u1ee7 \u0111\u1ec1", "process": "T\u1eeb \u00fd t\u01b0\u1edfng \u0111\u1ebfn h\u00e0nh \u0111\u1ed9ng", "about": "Gi\u1edbi thi\u1ec7u", "signup": "Nh\u1eadn c\u1eadp nh\u1eadt", "browse": "Kh\u00e1m ph\u00e1 \u2193", "signup_heading": "\u0110\u1ec3 l\u1ea1i email nh\u1eadn c\u1eadp nh\u1eadt", "signup_note": "Ch\u1ec9 g\u1eedi c\u1eadp nh\u1eadt quan tr\u1ecdng. C\u00f3 th\u1ec3 h\u1ee7y \u0111\u0103ng k\u00fd b\u1ea5t c\u1ee9 l\u00fac n\u00e0o.", "step1_title": "X\u00e1c \u0111\u1ecbnh v\u1ea5n \u0111\u1ec1 th\u1ef1c s\u1ef1", "step1_body": "B\u1eaft \u0111\u1ea7u t\u1eeb b\u1ed1i c\u1ea3nh th\u1ef1c t\u1ebf v\u00e0 x\u00e1c \u0111\u1ecbnh \u0111i\u1ec1u c\u1ea7n gi\u1ea3i quy\u1ebft.", "step2_title": "S\u1eafp x\u1ebfp th\u00f4ng tin hi\u1ec7u qu\u1ea3", "step2_body": "Bi\u1ebfn t\u01b0 li\u1ec7u r\u1eddi r\u1ea1c th\u00e0nh c\u1ea5u tr\u00fac v\u00e0 c\u00e2u chuy\u1ec7n r\u00f5 r\u00e0ng.", "step3_title": "\u0110\u00e1nh gi\u00e1 k\u1ebft qu\u1ea3", "step3_body": "\u0110\u1ec3 ph\u1ea3n h\u1ed3i th\u1ef1c t\u1ebf ki\u1ec3m ch\u1ee9ng k\u1ebft qu\u1ea3, r\u1ed3i ti\u1ebfp t\u1ee5c c\u1ea3i thi\u1ec7n."}, "ja": {"topics": "\u30c8\u30d4\u30c3\u30af", "process": "\u30a2\u30a4\u30c7\u30a2\u3092\u884c\u52d5\u306b", "about": "\u6982\u8981", "signup": "\u6700\u65b0\u60c5\u5831\u3092\u53d7\u3051\u53d6\u308b", "browse": "\u30b3\u30f3\u30c6\u30f3\u30c4\u3092\u898b\u308b \u2193", "signup_heading": "\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u3092\u767b\u9332\u3057\u3066\u6700\u65b0\u60c5\u5831\u3092\u53d7\u3051\u53d6\u308b", "signup_note": "\u91cd\u8981\u306a\u66f4\u65b0\u306e\u307f\u304a\u5c4a\u3051\u3002\u3044\u3064\u3067\u3082\u89e3\u9664\u3067\u304d\u307e\u3059\u3002", "step1_title": "\u672c\u5f53\u306e\u8ab2\u984c\u3092\u5b9a\u3081\u308b", "step1_body": "\u5b9f\u969b\u306e\u72b6\u6cc1\u304b\u3089\u51fa\u767a\u3057\u3001\u89e3\u304f\u3079\u304d\u8ab2\u984c\u3092\u660e\u78ba\u306b\u3057\u307e\u3059\u3002", "step2_title": "\u91cd\u8981\u306a\u60c5\u5831\u3092\u6574\u7406\u3059\u308b", "step2_body": "\u6563\u3089\u3070\u3063\u305f\u7d20\u6750\u3092\u660e\u78ba\u306a\u69cb\u6210\u3068\u30b9\u30c8\u30fc\u30ea\u30fc\u306b\u307e\u3068\u3081\u307e\u3059\u3002", "step3_title": "\u7d50\u679c\u3092\u632f\u308a\u8fd4\u308b", "step3_body": "\u5b9f\u969b\u306e\u30d5\u30a3\u30fc\u30c9\u30d0\u30c3\u30af\u3067\u6210\u679c\u3092\u691c\u8a3c\u3057\u3001\u6539\u5584\u3092\u7d9a\u3051\u307e\u3059\u3002"}}, "languages": ["en", "zh-CN", "zh-TW", "es", "vi", "ja"], "default": "en"};
+
+function normalize(tag) {
+  const lower = String(tag || "").toLowerCase().replace(/_/g, "-");
+  if (!lower) return null;
+  if (lower.startsWith("zh")) return /tw|hk|mo|hant/.test(lower) ? "zh-TW" : "zh-CN";
+  const base = lower.split("-")[0];
+  return CONFIG.languages.find((lang) => lang.toLowerCase().split("-")[0] === base) || null;
+}
+function preferred() {
+  let saved = null;
+  try { saved = localStorage.getItem("goovo_lang"); } catch (error) { saved = null; }
+  if (saved && CONFIG.strings[saved]) return saved;
+  const candidates = navigator.languages || [navigator.language || ""];
+  for (const tag of candidates) {
+    const matched = normalize(tag);
+    if (matched) return matched;
+  }
+  return CONFIG.default;
+}
+function apply(lang, persist) {
+  const dict = CONFIG.strings[lang] || CONFIG.strings[CONFIG.default];
+  document.documentElement.lang = lang;
+  for (const node of document.querySelectorAll("[data-i18n]")) {
+    const key = node.getAttribute("data-i18n");
+    if (dict[key]) node.textContent = dict[key];
+  }
+  const field = document.getElementById("lang-field");
+  if (field) field.value = lang;
+  const switcher = document.getElementById("lang-switch");
+  if (switcher) switcher.value = lang;
+  if (persist) {
+    try { localStorage.setItem("goovo_lang", lang); } catch (error) {}
+  }
+}
+const switcher = document.getElementById("lang-switch");
+if (switcher) switcher.addEventListener("change", () => apply(switcher.value, true));
+apply(preferred(), false);
+</script>
 </body>
 </html>
